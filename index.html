@@ -8,12 +8,15 @@
 
   <head>
 
+<!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+	  
     <!-- Display -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   
     <!-- Identidad -->
-    <title>Portafolio - William Vela -2024</title>
+    <title>Portafolio - William Vela -2025</title>
     <meta name="description" content="Diseñador Grafico con una sólida trayectoria en el diseño gráfico digital, destaco por mi excelente línea gráfica y un dominio avanzado de la suite Adobe. Mi experiencia abarca desde el desarrollo de campañas publicitarias hasta la creación y ejecución de sitios web, siempre aplicando habilidades conceptuales, estéticas y de comunicación visual de alto nivel.">
     <meta name="author" content="William Leonardo Vela">
     <link rel="shortcut icon" href="assets/images/favicon.jpg" type="image/x-icon" />
@@ -755,9 +758,8 @@
 		
       <!-- Map -->
       <section class="shock-section">
-        <div id="map-canvas-4" class="vh-50">
-		  </div>
-      </section>
+  <div id="map-personal" style="height: 400px; width: 100%; border-radius: 16px;"></div>
+</section>
 
       <!-- Form -->
         
@@ -1103,6 +1105,23 @@
 
     <!-- Main JavaScript -->
     <script src="assets/js/main.js"></script>
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<script>
+  // Coordenadas de Nueva York, cámbialas si quieres otro lugar
+  var map = L.map('map-personal').setView([40.7128, -74.0060], 12);
+
+  // Carga los tiles de OpenStreetMap
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap contributors'
+  }).addTo(map);
+
+  // Agrega un marcador personalizado
+  var marker = L.marker([40.7128, -74.0060]).addTo(map);
+  marker.bindPopup("<b>¡Aquí vivo!</b><br>Nueva York, NY.").openPopup();
+</script>
     
   </body>
 </html>
