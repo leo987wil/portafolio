@@ -4414,6 +4414,24 @@ table {
 .leaflet-popup-tip {
   background: #232323;
   color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px #000a;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.leaflet-popup-content-wrapper a {
+  color: #71a7ff;
+  text-decoration: underline;
+}
+
+.leaflet-popup-content {
+  margin: 8px 12px;
+}
+
+.leaflet-popup-close-button {
+  color: #fff;
+  opacity: 0.9;
 }
 /* Fin de Estilos Left para Mapa*/
 
