@@ -4407,6 +4407,17 @@ table {
 
 /* #endregion Scrolling Text */
 
+
+
+/* Estilos Left para Mapa*/
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  background: #232323;
+  color: #fff;
+}
+/* Fin de Estilos Left para Mapa*/
+
+
 /* #region Animated Text */
 
 :root .animated-text.scheme-1 {
