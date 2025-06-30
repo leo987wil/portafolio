@@ -1109,17 +1109,19 @@
 <!-- Leaflet JS -->
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <script>
-  var map = L.map('map-personal', { zoomControl: false }).setView([40.7128, -74.0060], 12);
+  // Centrado en Long Island y mostrando toda el área
+  var map = L.map('map-personal', { zoomControl: false }).setView([40.8, -73.2], 9);
 
-  // CartoDB Dark Matter tile layer (gratuito, no requiere API)
+  // CartoDB Dark Matter tile layer (gratuito)
   L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
     attribution: '© <a href="https://carto.com/attributions">CARTO</a> | © <a href="https://openstreetmap.org">OpenStreetMap</a>',
     subdomains: 'abcd',
     maxZoom: 19
   }).addTo(map);
 
-  var marker = L.marker([40.7128, -74.0060]).addTo(map);
-  marker.bindPopup("<b>¡Aquí vivo!</b><br>Nueva York, NY.");
+  // (Opcional) Puedes poner un marcador en tu ubicación real, o eliminarlo
+  var marker = L.marker([40.8, -73.2]).addTo(map);
+  marker.bindPopup("<b>Long Island</b><br>Área principal.");
 </script>
     
   </body>
