@@ -7,7 +7,6 @@
   </div>
 
   <head>
-<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 <!-- Leaflet CSS -->
 <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 	  
@@ -1107,22 +1106,23 @@
     <script src="assets/js/main.js"></script>
 
 <!-- Leaflet JS -->
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-<script>
-  // Centrado en Long Island y mostrando toda el área
-  var map = L.map('map-personal', { zoomControl: false }).setView([40.8, -73.2], 9.5);
+  <!-- Primero la librería Leaflet -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <!-- Después tu script personalizado, así: -->
+  <script>
+    var map = L.map('map-personal', { zoomControl: false }).setView([40.8, -73.2], 9);
 
-  // CartoDB Dark Matter tile layer (gratuito)
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-    attribution: '© <a href="https://carto.com/attributions">CARTO</a> | © <a href="https://openstreetmap.org">OpenStreetMap</a>',
-    subdomains: 'abcd',
-    maxZoom: 19
-  }).addTo(map);
+    L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/dark-v10/tiles/{z}/{x}/{y}?access_token=TU_TOKEN_AQUI', {
+      attribution: '© <a href="https://www.mapbox.com/">Mapbox</a> | © <a href="https://openstreetmap.org">OpenStreetMap</a>',
+      tileSize: 512,
+      zoomOffset: -1,
+      minZoom: 1,
+      maxZoom: 18
+    }).addTo(map);
 
-  // (Opcional) Puedes poner un marcador en tu ubicación real, o eliminarlo
-  var marker = L.marker([40.8, -73.2]).addTo(map);
-  marker.bindPopup("<b>Long Island</b><br>Área principal.");
-</script>
+    var marker = L.marker([40.8, -73.2]).addTo(map);
+    marker.bindPopup("<b>Long Island</b><br>Área principal.");
+  </script>
     
   </body>
 </html>
