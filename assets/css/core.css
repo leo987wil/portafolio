@@ -579,7 +579,7 @@ img, svg {
 	.ps-4 { padding-left: 4rem !important; }
 
 	.p-5 { padding: 5rem !important; }
-	.pt-5 { padding-top: 5rem !important; }
+	.pt-5 { padding-top: 1rem !important; }
 	.pe-5 { padding-right: 5rem !important; }
 	.pb-5 { padding-bottom: 5rem !important; }
 	.ps-5 { padding-left: 5rem !important; }
@@ -1924,5 +1924,6 @@ img, svg {
 		margin-left: 0;
 	}
 }
+
 
 /* #endregion Helpers */
